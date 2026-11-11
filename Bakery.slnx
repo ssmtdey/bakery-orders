@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Bakery.Api/Bakery.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Bakery.Tests/Bakery.Tests.csproj" />
+  </Folder>
+</Solution>
