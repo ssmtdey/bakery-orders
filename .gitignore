@@ -429,3 +429,6 @@ FodyWeavers.xsd
 *.db
 *.db-shm
 *.db-wal
+
+# Other files and folders
+docs/decisions.md

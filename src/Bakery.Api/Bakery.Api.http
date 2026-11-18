@@ -1,6 +1,3 @@
 @Bakery.Api_HostAddress = http://localhost:5042
 
-GET {{Bakery.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
 ###
