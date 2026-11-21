@@ -65,6 +65,33 @@ namespace Bakery.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ExtraTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Topper"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Fondant figure"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Fresh flowers"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Chocolates"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Fake flowers"
+                        });
                 });
 
             modelBuilder.Entity("Bakery.Api.Models.Filling", b =>
@@ -84,6 +111,44 @@ namespace Bakery.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Fillings");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsActive = true,
+                            Name = "Chocolate"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IsActive = true,
+                            Name = "Caramel"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IsActive = true,
+                            Name = "Lemon curd"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IsActive = true,
+                            Name = "Oreo"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IsActive = true,
+                            Name = "Lotus biscoff"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            IsActive = true,
+                            Name = "Kinderbueno"
+                        });
                 });
 
             modelBuilder.Entity("Bakery.Api.Models.LineExtra", b =>
@@ -127,6 +192,28 @@ namespace Bakery.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MenuItems");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Cupcakes"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Bentocake"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Round cake"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Heart cake"
+                        });
                 });
 
             modelBuilder.Entity("Bakery.Api.Models.Order", b =>
@@ -283,6 +370,173 @@ namespace Bakery.Api.Migrations
                     b.HasIndex("MenuItemId");
 
                     b.ToTable("SizeOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BasePricePence = 350L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 1,
+                            Name = "1 cupcake",
+                            OvenUnits = 1,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BasePricePence = 2500L,
+                            IsActive = true,
+                            MaxFillings = 6,
+                            MenuItemId = 1,
+                            Name = "6 cupcakes",
+                            OvenUnits = 0,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BasePricePence = 4500L,
+                            IsActive = true,
+                            MaxFillings = 6,
+                            MenuItemId = 1,
+                            Name = "12 cupcakes",
+                            OvenUnits = 0,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BasePricePence = 2500L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 2,
+                            Name = "Bentocake",
+                            OvenUnits = 5,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BasePricePence = 3500L,
+                            IsActive = true,
+                            MaxFillings = 3,
+                            MenuItemId = 2,
+                            Name = "Bentocake & 2 cupcakes",
+                            OvenUnits = 0,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BasePricePence = 5000L,
+                            IsActive = true,
+                            MaxFillings = 6,
+                            MenuItemId = 2,
+                            Name = "Bentocake & 5 cupcakes",
+                            OvenUnits = 0,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BasePricePence = 6000L,
+                            IsActive = true,
+                            MaxFillings = 6,
+                            MenuItemId = 2,
+                            Name = "Bentocake & 8 cupcakes",
+                            OvenUnits = 0,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BasePricePence = 6500L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 3,
+                            Name = "Round cake 8-10 servings",
+                            OvenUnits = 20,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BasePricePence = 8000L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 3,
+                            Name = "Round cake 12-15 servings",
+                            OvenUnits = 20,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BasePricePence = 12000L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 3,
+                            Name = "Round cake 18-22 servings",
+                            OvenUnits = 30,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BasePricePence = 15000L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 3,
+                            Name = "Round cake 24-27 servings",
+                            OvenUnits = 30,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BasePricePence = 7500L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 4,
+                            Name = "Heart cake 10-15 servings",
+                            OvenUnits = 20,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BasePricePence = 14500L,
+                            IsActive = true,
+                            MaxFillings = 1,
+                            MenuItemId = 4,
+                            Name = "Heart cake 20-25 servings",
+                            OvenUnits = 30,
+                            Tiers = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BasePricePence = 20000L,
+                            IsActive = true,
+                            MaxFillings = 2,
+                            MenuItemId = 3,
+                            Name = "Round cake 30-35 servings",
+                            OvenUnits = 0,
+                            Tiers = 2
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BasePricePence = 25000L,
+                            IsActive = true,
+                            MaxFillings = 2,
+                            MenuItemId = 3,
+                            Name = "Round cake 40-45 servings",
+                            OvenUnits = 0,
+                            Tiers = 2
+                        });
                 });
 
             modelBuilder.Entity("Bakery.Api.Models.SizeOptionPart", b =>
@@ -307,6 +561,92 @@ namespace Bakery.Api.Migrations
                     b.HasIndex("SizeOptionId");
 
                     b.ToTable("SizeOptionParts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PartSizeOptionId = 1,
+                            Quantity = 6,
+                            SizeOptionId = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PartSizeOptionId = 1,
+                            Quantity = 12,
+                            SizeOptionId = 3
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PartSizeOptionId = 4,
+                            Quantity = 1,
+                            SizeOptionId = 5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            PartSizeOptionId = 1,
+                            Quantity = 2,
+                            SizeOptionId = 5
+                        },
+                        new
+                        {
+                            Id = 5,
+                            PartSizeOptionId = 4,
+                            Quantity = 1,
+                            SizeOptionId = 6
+                        },
+                        new
+                        {
+                            Id = 6,
+                            PartSizeOptionId = 1,
+                            Quantity = 5,
+                            SizeOptionId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            PartSizeOptionId = 4,
+                            Quantity = 1,
+                            SizeOptionId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            PartSizeOptionId = 1,
+                            Quantity = 8,
+                            SizeOptionId = 7
+                        },
+                        new
+                        {
+                            Id = 9,
+                            PartSizeOptionId = 8,
+                            Quantity = 1,
+                            SizeOptionId = 14
+                        },
+                        new
+                        {
+                            Id = 10,
+                            PartSizeOptionId = 10,
+                            Quantity = 1,
+                            SizeOptionId = 14
+                        },
+                        new
+                        {
+                            Id = 11,
+                            PartSizeOptionId = 9,
+                            Quantity = 1,
+                            SizeOptionId = 15
+                        },
+                        new
+                        {
+                            Id = 12,
+                            PartSizeOptionId = 11,
+                            Quantity = 1,
+                            SizeOptionId = 15
+                        });
                 });
 
             modelBuilder.Entity("Bakery.Api.Models.WeekBooking", b =>
