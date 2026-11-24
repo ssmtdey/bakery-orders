@@ -26,8 +26,9 @@ namespace Bakery.Api.Migrations
                     b.Property<DateTimeOffset?>("AnonymisedAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Channel")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Channel")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Handle")
                         .IsRequired()
@@ -241,14 +242,14 @@ namespace Bakery.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("DeclineReason")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("DeclineReason")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset?>("PaidAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("PaymentMethod")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PaymentMethod")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateOnly>("PickupDate")
                         .HasColumnType("TEXT");
@@ -262,8 +263,9 @@ namespace Bakery.Api.Migrations
                     b.Property<long?>("QuotedTotalPence")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset>("UpdatedAt")
                         .HasColumnType("TEXT");
@@ -296,8 +298,9 @@ namespace Bakery.Api.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Flavour")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Flavour")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Inscription")
                         .HasMaxLength(60)
@@ -308,8 +311,9 @@ namespace Bakery.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Occasion")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Occasion")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("OccasionDetail")
                         .HasMaxLength(100)

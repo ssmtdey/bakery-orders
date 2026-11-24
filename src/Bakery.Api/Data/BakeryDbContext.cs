@@ -94,6 +94,18 @@ public class BakeryDbContext : DbContext
 
         modelBuilder.Entity<OrderLine>().Property(l => l.InspoLink).HasMaxLength(500);
 
+        modelBuilder.Entity<Customer>().Property(c => c.Channel).HasConversion<string>();
+
+        modelBuilder.Entity<Order>().Property(o => o.Status).HasConversion<string>();
+
+        modelBuilder.Entity<Order>().Property(o => o.DeclineReason).HasConversion<string>();
+
+        modelBuilder.Entity<Order>().Property(o => o.PaymentMethod).HasConversion<string>();
+
+        modelBuilder.Entity<OrderLine>().Property(l => l.Flavour).HasConversion<string>();
+
+        modelBuilder.Entity<OrderLine>().Property(l => l.Occasion).HasConversion<string>();
+
         modelBuilder.Entity<MenuItem>().HasData(
             new MenuItem { Id = 1, Name = "Cupcakes" },
             new MenuItem { Id = 2, Name = "Bentocake" },
