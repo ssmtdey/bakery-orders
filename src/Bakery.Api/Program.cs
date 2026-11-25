@@ -1,5 +1,7 @@
 using Bakery.Api.Data;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BakeryDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("Bakery")));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(o => o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 builder.Services.AddOpenApi();
 
@@ -17,6 +20,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();  
 }
 
 app.UseHttpsRedirection();
