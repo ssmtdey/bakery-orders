@@ -50,4 +50,25 @@ public class SizeOptionsController : ControllerBase
         var response = new SizeOptionResponse(size.Id, size.MenuItemId, size.Name, size.Tiers, size.BasePricePence, size.MaxFillings, size.IsActive);
         return CreatedAtAction(nameof(GetById), new { id = size.Id }, response);
     }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<SizeOptionResponse>> Update(int id, UpdateSizeOptionRequest request)
+    {
+        var size = await _db.SizeOptions.FindAsync(id);
+        if (size is null) return NotFound();
+
+        var menuItemExists = await _db.MenuItems.AnyAsync(m => m.Id == request.MenuItemId);
+        if (!menuItemExists) return BadRequest("Menu item does not exist.");
+
+        size.MenuItemId = request.MenuItemId;
+        size.Name = request.Name;
+        size.Tiers = request.Tiers;
+        size.BasePricePence = request.BasePricePence;
+        size.OvenUnits = request.OvenUnits;
+        size.MaxFillings = request.MaxFillings;
+        size.IsActive = request.IsActive!.Value;
+        await _db.SaveChangesAsync();
+
+        return new SizeOptionResponse(size.Id, size.MenuItemId, size.Name, size.Tiers, size.BasePricePence, size.MaxFillings, size.IsActive);
+    }
 }
